@@ -244,4 +244,7 @@ SEXP AsInt(int x);
 int spmd_errhandler(int error_code);
 int spmd_comm_slot(void);
 
+/* In file "spmd_ft.c". */
+SEXP spmd_comm_agree(SEXP R_comm, SEXP R_flag);
+
 #endif
