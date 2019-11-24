@@ -259,6 +259,12 @@ spmd.intercomm.create <- function(local.comm = .pbd_env$SPMD.CT$comm,
 
 intercomm.create <- spmd.intercomm.create
 
+spmd.comm.create.group <- function(comm = .pbd_env$SPMD.CT$comm,
+    group, tag = .pbd_env$SPMD.CT$tag){
+  ret <- .Call("spmd_comm_create_group", as.integer(comm),
+               group, as.integer(tag), PACKAGE = "pbdMPI")
+  invisible(ret)
+} # End of spmd.comm.create().
 
 ### Fortran supporting function.
 spmd.comm.c2f <- function(comm = .pbd_env$SPMD.CT$comm){
